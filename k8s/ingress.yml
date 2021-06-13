@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: simple-push-center-web-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /simple-push-center-web
+            pathType: Prefix
+            backend:
+              serviceName: simple-push-center-web-service
+              servicePort: 8041

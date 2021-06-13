@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: simple-push-center-web
+  name: simple-push-center-web-service
+spec:
+  type: LoadBalancer
+  ports:
+    - name: simple-push-center-web-port
+      port: 8041
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: simple-push-center-web
