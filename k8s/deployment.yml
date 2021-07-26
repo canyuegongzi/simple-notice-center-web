@@ -15,6 +15,6 @@ spec:
         app: simple-push-center-web
     spec:
       containers:
-          - image: canyuegongzi/simple-push-center-web:1.1
+          - image: canyuegongzi/simple-push-center-web:1.4
             imagePullPolicy: IfNotPresent
             name: simple-push-center-web

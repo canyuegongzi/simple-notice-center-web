@@ -6,6 +6,7 @@
                 .search-item
                     el-input(v-model="query.from" @blur="getData('search')"  @keyup.enter.native="getData('search')" placeholder="请输入发送者" size="mini" suffix-icon="el-icon-search")
                     el-input(v-model="query.to" @blur="getData('search')"  @keyup.enter.native="getData('search')" placeholder="请输入接收者" size="mini" suffix-icon="el-icon-search")
+                    el-input(v-model="query.taskCode" @blur="getData('search')"  @keyup.enter.native="getData('search')" placeholder="请输入任务编号" size="mini" suffix-icon="el-icon-search")
                     el-select(v-model="query.isDelay" placeholder="是否延时任务" size="mini" @change="getData('search')")
                         el-option(label="是否延时任务" value="4" :key="3" :disabled="true")
                         el-option(label="全部" value="" :key="322358748")
@@ -149,6 +150,7 @@ export default class TaskList extends Vue {
     isDelay: "",
     endTime: "",
     status: '',
+    taskCode: ''
   };
   public organUser: any = {
     orId: '',
@@ -254,6 +256,7 @@ export default class TaskList extends Vue {
       isDelay: this.query.isDelay,
       endTime: this.query.endTime,
       status: this.query.status,
+      taskCode: this.query.taskCode
     });
     this.total = (response.data && response.data.count) || 0;
     this.tableData =

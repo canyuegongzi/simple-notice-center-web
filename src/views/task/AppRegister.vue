@@ -26,8 +26,8 @@
                             el-input(type="textarea" size="mini" :rows="4" show-password v-model="appKey.keyValue" auto-complete="off")
                         el-form-item(label="状态：" prop="status")
                             el-radio-group(v-model="appKey.status"  size="mini")
-                                el-radio(:label="1") 开启
-                                el-radio(:label="0") 关闭
+                                el-radio(:label="true") 开启
+                                el-radio(:label="false") 关闭
             div(slot="footer")
                 el-button(@click="cancelFun" size="mini") 取消
                 el-button(@click="getKey" size="mini" :disabled="isDisabled1") 获取KEY
@@ -282,7 +282,7 @@ export default class AppRegister extends Vue {
     this.tableData =
       response.data && response.data.data ? response.data.data : [];
     this.tableData.forEach((item: any, index: number) => {
-      item.statusLabel = item.status === '1' ? '开启' : '关闭';
+      item.statusLabel = item.status === true ? '开启' : '关闭';
       item.index = index + 1;
     });
     const totalPageNumber = Math.ceil(this.total / this.pageSize);

@@ -198,3 +198,9 @@ module.exports = [{
 [github](https://github.com/canyuegongzi/simple-push-center.git)
 
 [消息推送系统](http://canyuegongzi.xyz/simple-notice-center-web)
+
+```
+docker build -t simple-push-center-web  .
+docker tag 542212bfb784ad6d15ef6d1a91a0943913b6041c61608382c58ad29b99b97d30 canyuegongzi/simple-push-center-web:1.2
+docker push canyuegongzi/simple-push-center-web:1.2
+```

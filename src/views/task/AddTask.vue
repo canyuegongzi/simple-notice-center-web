@@ -86,6 +86,9 @@
                     .footer
                         el-button(type="primary" @click="okFun" size="mini") 确定
                         el-button(@click="cancelFun" size="mini") 重置
+        .note-container
+            p 1: 邮件推送内容支持 html 和文字格式;
+            p 1: 短信推送内容遵循阿里短信推送的规范，内容必须为 {code: 15215215} 此类格式（其中code是短信模板的变量名称）。
 </template>
 
 <<script lang="ts">
@@ -525,4 +528,15 @@ export default class AddTask extends Vue {
         margin-bottom 32px
     .demo-ruleForm
         margin-top 32px
+    .note-container
+        position absolute
+        width: 260px;
+        height: 350px;
+        top: 80px
+        right: 40px
+        background: #ebeef5;
+        color: #909399;
+        font-size: 14px;
+        border-radius: 4px;
+        padding 16px
 </style>

@@ -10,7 +10,8 @@
                 el-table(:data="tableData" border size="mini"  ref="dataTable" @selection-change="handleSelectionChange")
                     // el-table-column(type="selection" v-if="allowDelete" width="50" align="center" :selectable="allowDeleteData")
                     el-table-column(prop="index" label="序号" type="index" align="center" width="80")
-                    el-table-column(prop="isSuccess" label="执行结果"  align="center")
+                    el-table-column(prop="taskCode" label="关联任务" align="center" width="140")
+                    el-table-column(prop="isSuccess" label="执行结果"  align="center" width="140")
                         template( slot-scope="scope")
                             span {{scope.row.isSuccess ? '成功': '失败'}}
                     el-table-column(prop="from" label="发送人员"  align="center")
